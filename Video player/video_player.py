@@ -97,8 +97,8 @@ class VideoPlayer(QMainWindow):
             if hasattr(self, 'convert_to_grayscale') and self.convert_to_grayscale:
                 frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
                 frame = cv2.cvtColor(frame, cv2.COLOR_GRAY2RGB)
-            else:
-                frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                
+            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
             image = QPixmap.fromImage(QImage(frame.data, frame.shape[1], frame.shape[0], QImage.Format_RGB888))
             self.video_label.setPixmap(image)
